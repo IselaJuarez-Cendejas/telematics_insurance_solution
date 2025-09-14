@@ -486,11 +486,7 @@ The interface is fully responsive and optimized for:
 
 ### Current Deployment
 
-The solution is currently deployed on Manus Cloud Platform:
-- **Live URL**: https://vgh0i1c1xo8n.manus.space
-- **Environment**: Production-ready
-- **Monitoring**: Built-in health checks
-- **Scaling**: Auto-scaling enabled
+The solution currently works locally.
 
 ### Production Deployment Recommendations
 
