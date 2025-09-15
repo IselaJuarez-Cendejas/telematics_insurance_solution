@@ -1,26 +1,47 @@
 # Telematics-Based Auto Insurance Solution
 
-This project implements a telematics-based auto insurance solution, featuring a Flask backend and a React frontend. It captures real-time driving behavior, calculates dynamic risk scores, and provides a user dashboard with gamification and real-time feedback.
+This project implements a telematics-based auto insurance solution, featuring a Flask backend and a React frontend. It captures mock driving behavior, calculates dynamic risk scores, and provides a user dashboard with gamification and feedback.
 
 ## Project Structure
 
 ```
-telematics_solution/
-├── telematics_insurance_backend/  # Flask Backend
-│   ├── src/                       # Python source code
-│   ├── venv/                      # Python virtual environment (will be created)
-│   ├── requirements.txt           # Python dependencies
-│   └── test_simulation.py         # Script for testing and data simulation
+telematics_insurance_solution/
 ├── telematics_dashboard/          # React Frontend
 │   ├── public/
 │   ├── src/                       # React source code
+│   │   ├── App.jsx
+│   │   ├── components/
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── RealTimeFeedback.jsx
+│   │   └── assets/
 │   ├── package.json               # Node.js dependencies
 │   ├── pnpm-lock.yaml             # pnpm lock file
-│   └── vite.config.js             # Vite configuration
+│   ├── vite.config.js             # Vite configuration
+│   ├── index.html                 # HTML entry point
+│   └── Dockerfile                 # Dockerfile for the React frontend
 ├── design_document.md             # Overall system design document
 ├── api_documentation.md           # Detailed API documentation
 ├── telematics_solution_documentation.md # Comprehensive solution overview
-└── README.md                      # This file
+├── README.md                      # Project README and local run instructions
+└── docker-compose.yml             # Docker Compose file for orchestration
+├── telematics_insurance_backend/  # Flask Backend
+│   ├── src/                       # Python source code
+│   │   ├── main.py
+│   │   ├── models/
+│   │   │   ├── user.py
+│   │   │   └── telematics.py
+│   │   ├── routes/
+│   │   │   ├── user.py
+│   │   │   ├── telematics.py
+│   │   │   ├── data_processing.py
+│   │   │   ├── gamification.py
+│   │   │   └── external_data.py
+│   │   └── static/                # Frontend build files (copied here for deployment)
+│   ├── venv/                      # Python virtual environment (local, not in Docker)
+│   ├── requirements.txt           # Python dependencies
+│   ├── test_simulation.py         # Script for testing and data simulation
+│   └── Dockerfile                 # Dockerfile for the Flask backend
+
 ```
 
 ## How to Run Locally
@@ -32,7 +53,7 @@ To run the entire solution locally on your computer, you will need to have **Pyt
 First, clone this repository to your local machine:
 
 ```bash
-git clone <https://github.com/IselaJuarez-Cendejas/telematics_insurance_solution.git> # Replace <repository_url> with the actual URL
+git clone https://github.com/IselaJuarez-Cendejas/telematics_insurance_solution.git
 cd telematics_solution
 ```
 
@@ -132,5 +153,3 @@ To populate the database with test data and see the system in action, you can ru
     python test_simulation.py
     ```
     This script will create test policyholders, simulate trips, and interact with all backend APIs, populating the dashboard with data. Refresh your browser to see the changes.
-
-Enjoy exploring the Telematics-Based Auto Insurance Solution!
